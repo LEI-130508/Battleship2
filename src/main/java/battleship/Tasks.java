@@ -32,6 +32,12 @@ public class Tasks {
 	private static final String MAPA = "mapa";
 	private static final String STATUS = "estado";
 	private static final String SIMULA = "simula";
+	private static final String PDF = "pdf";
+
+	/**
+	 * Default filename for exporting game reports to PDF.
+	 */
+	private static final String DEFAULT_PDF_FILE = "relatorio_jogadas.pdf";
 
 	/**
 	 * This task also tests the fighting element of a round of three shots
@@ -101,6 +107,18 @@ public class Tasks {
 					if (game != null)
 						game.printMyBoard(true, true);
 					break;
+				case PDF:
+					if (game != null) {
+						boolean success = PdfExporter.exportGameToPdf(game, DEFAULT_PDF_FILE);
+						if (success) {
+							System.out.println("Relatório de jogadas exportado com sucesso para: " + DEFAULT_PDF_FILE);
+						} else {
+							System.out.println("Ocorreu um erro ao exportar o relatório para PDF.");
+						}
+					} else {
+						System.out.println("É necessário iniciar um jogo primeiro (use '" + GERAFROTA + "' ou '" + LEFROTA + "').");
+					}
+					break;
                 case AJUDA:
                     menuHelp();
                     break;
@@ -126,6 +144,7 @@ public class Tasks {
 		System.out.println("- " + RAJADA + ": Realiza uma rajada de disparos.");
 		System.out.println("- " + SIMULA + ": Simula um jogo completo.");
 		System.out.println("- " + TIROS + ": Lista os tiros válidos realizados (* = tiro em navio, o = tiro na água)");
+		System.out.println("- " + PDF + ": Exporta o histórico de jogadas e estado da frota para um ficheiro PDF.");
 		System.out.println("- " + DESISTIR + ": Encerra o jogo.");
 		System.out.println("===============================================================");
 	}
