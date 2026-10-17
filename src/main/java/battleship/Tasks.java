@@ -5,6 +5,7 @@ import java.util.Scanner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.apache.commons.lang3.time.StopWatch;
 
 /**
  * The type Tasks.
@@ -48,8 +49,12 @@ public class Tasks {
 		IGame game = null;
 		menuHelp();
 
-		System.out.print("> ");
+
 		Scanner in = new Scanner(System.in);
+
+		System.out.print("> ");
+		StopWatch cronometro = StopWatch.createStarted();
+
 		String command = in.next();
 		while (!command.equals(DESISTIR)) {
 
@@ -75,6 +80,16 @@ public class Tasks {
 				case RAJADA:
 					if (game != null) {
 						game.readEnemyFire(in);
+
+						// Parar o cronómetro após a introdução e processamento da rajada
+						cronometro.stop();
+
+						// Converter o tempo de nanossegundos para segundos
+						double tempoSegundos = cronometro.getNanoTime() / 1_000_000_000.0;
+
+						// Apresentar o tempo da jogada
+						System.out.printf("Tempo da jogada: %.2f segundos%n", tempoSegundos);
+
 						myFleet.printStatus();
 						game.printMyBoard(true, false);
 
@@ -119,13 +134,19 @@ public class Tasks {
 						System.out.println("É necessário iniciar um jogo primeiro (use '" + GERAFROTA + "' ou '" + LEFROTA + "').");
 					}
 					break;
-                case AJUDA:
-                    menuHelp();
-                    break;
+				case AJUDA:
+					menuHelp();
+					break;
 				default:
 					System.out.println("Que comando é esse??? Repete ...");
 			}
+
 			System.out.print("> ");
+
+			// Reiniciar o cronómetro para o próximo comando
+			cronometro.reset();
+			cronometro.start();
+
 			command = in.next();
 		}
 		System.out.println(GOODBYE_MESSAGE);
