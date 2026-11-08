@@ -1,0 +1,32 @@
+
+# 130508 - João Miguel
+
+name: Checkstyle 130508
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  checks: write
+
+jobs:
+  checkstyle:
+    name: checkstyle-130508
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do projeto
+        uses: actions/checkout@v6
+
+      - name: Verificar nomes das constantes
+        uses: dbelyaev/action-checkstyle@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          checkstyle_config: checkstyle-130508.xml
+          reporter: github-pr-check
+          level: error
+          fail_level: error
+          filter_mode: nofilter
