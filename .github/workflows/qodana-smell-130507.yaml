@@ -20,12 +20,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
           fetch-depth: 0
 
       - name: Run Qodana Scan
         uses: JetBrains/qodana-action@v2024.2
         with:
-          args: --config,qodana-130507.yaml
+          args: --config,qodana-130507.yaml,--profile-path,.qodana/profiles/profile-130507.yaml
           use-annotations: true
           post-pr-comment: true
