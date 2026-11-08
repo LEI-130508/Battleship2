@@ -25,7 +25,7 @@ jobs:
         uses: dbelyaev/action-checkstyle@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          checkstyle_config: Checkstyle/checkstyle-NUMERO_ALUNO.xml
+          checkstyle_config: Checkstyle/checkstyle-130508.xml
           reporter: github-pr-check
           level: error
           fail_level: error
