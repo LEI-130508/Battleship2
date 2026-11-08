@@ -454,8 +454,4 @@ public class Game implements IGame
 			System.out.println("+--------------------------------------------------------------+");
 	}
 
-	// Método para validar o chumbo do Checkstyle (PascalCase em vez de camelCase)
-    public void MetodoComNomeInvalido() {
-        System.out.println("Checkstyle deve chumbar este método.");
-    }
 }
