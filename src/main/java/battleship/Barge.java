@@ -9,7 +9,7 @@ package battleship;
  * Time: 15:30
  */
 public class Barge extends Ship {
-  private static final int maxShips = 10;
+  private static final int MAX_SHIPS = 10;
 	/**
 	 * Instantiates a new Barge.
 	 *
