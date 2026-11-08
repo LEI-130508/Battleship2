@@ -1,4 +1,4 @@
-# 130508
+# 130508 João Miguel
 name: Qodana smell gate 130508
 on:
   pull_request:
