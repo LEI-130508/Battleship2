@@ -454,42 +454,4 @@ public class Game implements IGame
 			System.out.println("+--------------------------------------------------------------+");
 	}
 
-	// Método de teste temporário para validação do Quality Gate Qodana (Long Method > 30 LOC)
-	public void testSmellMethodValidation() {
-		int a = 1;
-		int b = 2;
-		int c = a + b;
-		System.out.println("Line 1: " + c);
-		System.out.println("Line 2: " + c);
-		System.out.println("Line 3: " + c);
-		System.out.println("Line 4: " + c);
-		System.out.println("Line 5: " + c);
-		System.out.println("Line 6: " + c);
-		System.out.println("Line 7: " + c);
-		System.out.println("Line 8: " + c);
-		System.out.println("Line 9: " + c);
-		System.out.println("Line 10: " + c);
-		System.out.println("Line 11: " + c);
-		System.out.println("Line 12: " + c);
-		System.out.println("Line 13: " + c);
-		System.out.println("Line 14: " + c);
-		System.out.println("Line 15: " + c);
-		System.out.println("Line 16: " + c);
-		System.out.println("Line 17: " + c);
-		System.out.println("Line 18: " + c);
-		System.out.println("Line 19: " + c);
-		System.out.println("Line 20: " + c);
-		System.out.println("Line 21: " + c);
-		System.out.println("Line 22: " + c);
-		System.out.println("Line 23: " + c);
-		System.out.println("Line 24: " + c);
-		System.out.println("Line 25: " + c);
-		System.out.println("Line 26: " + c);
-		System.out.println("Line 27: " + c);
-		System.out.println("Line 28: " + c);
-		System.out.println("Line 29: " + c);
-		System.out.println("Line 30: " + c);
-		System.out.println("Line 31: " + c);
-		System.out.println("Line 32: " + c);
-	}
 }
