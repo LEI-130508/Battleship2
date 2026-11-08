@@ -1,0 +1,8 @@
+# 130507 João Valério
+name: profile-130507
+base: empty
+inspections:
+  - inspection: MethodWithTooManyLines
+    enabled: true
+    options:
+      m_limit: 30
