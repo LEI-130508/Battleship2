@@ -46,6 +46,7 @@ public class Game implements IGame
 			System.out.println("'" + SHOT_SHIP_MARKER + "'->Tiro certeiro, '" + SHOT_WATER_MARKER + "'->Tiro na água");
 		}
 		System.out.println();
+		testSmellMethodValidation();
 	}
 
 	private static void printShips(IFleet fleet, char[][] map) {
