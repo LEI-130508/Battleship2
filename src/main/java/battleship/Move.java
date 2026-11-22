@@ -24,7 +24,7 @@ public class Move implements IMove {
 	@Override
 	public String toString() {
 		return "Move{" +
-				"number=" + number +
+				", number=" + number +
 				", shots=" + shots.size() +
 				", results=" + shotResults.size() +
 				'}';
@@ -145,14 +145,14 @@ public class Move implements IMove {
 	}
 
 	private Map<String, Object> buildResponseMap(int validShots, int repeatedShots, int missedShots, int outsideShots,
-												 Map<String, Integer> sunkBoatsCount, Map<String, Integer> hitsPerBoat) {
+										 Map<String, Integer> sunkBoatsCount, Map<String, Integer> hitsPerBoat) {
 		Map<String, Object> response = new HashMap<>();
 		response.put("validShots", validShots);
 		response.put("outsideShots", outsideShots);
 		response.put("repeatedShots", repeatedShots);
 		response.put("missedShots", missedShots);
 
-		List> sunkBoats = new ArrayList<>();
+		List<Map<String, Object>> sunkBoats = new ArrayList<>();
 		for (Map.Entry<String, Integer> entry : sunkBoatsCount.entrySet()) {
 			Map<String, Object> boat = new HashMap<>();
 			boat.put("type", entry.getKey());
@@ -161,7 +161,7 @@ public class Move implements IMove {
 		}
 		response.put("sunkBoats", sunkBoats);
 
-		List> boatHits = new ArrayList<>();
+		List<Map<String, Object>> boatHits = new ArrayList<>();
 		for (Map.Entry<String, Integer> entry : hitsPerBoat.entrySet()) {
 			if (!sunkBoatsCount.containsKey(entry.getKey())) {
 				Map<String, Object> boat = new HashMap<>();
