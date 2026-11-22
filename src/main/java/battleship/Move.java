@@ -174,7 +174,7 @@ public class Move implements IMove {
 		return response;
 	}
 
-	private String serializeResponse(Map<String, Object> response) {
+	private static String serializeResponse(Map<String, Object> response) {
 		ObjectMapper objectMapper = new ObjectMapper();
 		objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
 
