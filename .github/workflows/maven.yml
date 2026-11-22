@@ -18,5 +18,5 @@ jobs:
           java-version: '21'
           distribution: 'temurin'
           cache: maven
-            - name: Build with Maven (runs JUnit tests)
-              run: mvn -B test -Dcheckstyle.skip=true --file pom.xml
+      - name: Build with Maven (runs JUnit tests)
+        run: mvn -B test -Dcheckstyle.skip=true --file pom.xml
