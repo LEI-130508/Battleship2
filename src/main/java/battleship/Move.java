@@ -24,7 +24,7 @@ public class Move implements IMove {
 	@Override
 	public String toString() {
 		return "Move{" +
-				", number=" + number +
+				"number=" + number +
 				", shots=" + shots.size() +
 				", results=" + shotResults.size() +
 				'}';
@@ -145,7 +145,7 @@ public class Move implements IMove {
 	}
 
 	private Map<String, Object> buildResponseMap(int validShots, int repeatedShots, int missedShots, int outsideShots,
-										 Map<String, Integer> sunkBoatsCount, Map<String, Integer> hitsPerBoat) {
+									 Map<String, Integer> sunkBoatsCount, Map<String, Integer> hitsPerBoat) {
 		Map<String, Object> response = new HashMap<>();
 		response.put("validShots", validShots);
 		response.put("outsideShots", outsideShots);
