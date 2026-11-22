@@ -167,11 +167,9 @@ graph TD
 
 ---
 
-## 🧪 Testing
-We use high-coverage unit testing to ensure game stability. Run tests using:
-```bash
-mvn test
-```
+## Testes Unitários Automatizados (GitHub Actions)
+
+O workflow `Java CI with Maven` (`.github/workflows/maven.yml`) executa automaticamente a bateria de testes unitários JUnit (`mvn -B test`) em cada `push` e `pull_request`, garantindo que novas alterações e refabricações não introduzem regressões.
 
 > [!TIP]
 > Use the `-Dtest=ClassName` flag to run specific test suites during development.
